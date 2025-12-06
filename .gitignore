@@ -1,0 +1,6 @@
+node_modules/
+output/*.pdf
+!output/.gitkeep
+.env
+*.log
+.DS_Store
