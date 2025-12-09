@@ -1,7 +1,7 @@
 require('dotenv').config();
 const pdfService = require('../src/services/pdfService');
 
-const templateName = 'Formulir_Magang_BCA.pdf';
+const templateName = 'CAR SPAJ CLEAN.pdf';
 
 const chooseOption = (options = []) => {
     const cleaned = options.map((o) => (typeof o === 'string' ? o : String(o || '')));
@@ -11,15 +11,17 @@ const chooseOption = (options = []) => {
 
 const buildData = (fields) => {
     const base = {
-        nama_lengkap: 'Tester Lengkap',
-        no_ktp: '9999999999999999',
-        no_handphone: '081234567890',
-        email: 'tester@example.com',
-        kota_ttd: 'Jakarta',
-        tanggal_ttd: '06/12/2025',
-        nama_jelas: 'Tester Lengkap',
-        tinggi_badan: '170',
-        berat_badan: '65'
+        nama_lengkap: 'Kevin Adi Santoso',
+        tempat_lahir: 'Ungaran',
+        kewarganegaraan: 'Indonesia',
+        tanggal_hari_lahir: '04',
+        tanggal_bulan_lahir: '06',
+        tanggal_tahun_lahir: '2005',
+        nama_gadis_ibu: 'Tien',
+        alamat_baris_1: 'Jl. Parasamya',
+        email: 'kevinadsantoso@gmail.com',
+        usia: '20',
+        alamat_baris_2: ''
     };
 
     const data = { ...base };
