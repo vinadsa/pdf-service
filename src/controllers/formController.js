@@ -23,10 +23,15 @@ const inspectTemplate = async (req, res, next) => {
 
 const fillForm = async (req, res, next) => {
     try {
-        const { templateName, flatten } = req.body;
+        const templateName = req.templateName || req.body.templateName;
+        const { flatten } = req.body;
         const formData = { ...req.body };
         delete formData.templateName;
         delete formData.flatten;
+
+        if (!templateName) {
+            throw new Error('Template name is required');
+        }
 
         logger.info(`Filling form for template: ${templateName}`);
 
@@ -34,7 +39,6 @@ const fillForm = async (req, res, next) => {
 
         return successResponse(res, {
             filename: result.filename,
-            path: result.path,
             downloadUrl: `/api/forms/download/${result.filename}`,
             size: result.size
         }, 'Form filled successfully', 201);

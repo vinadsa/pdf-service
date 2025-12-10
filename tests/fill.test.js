@@ -1,7 +1,7 @@
 require('dotenv').config();
 const pdfService = require('../src/services/pdfService');
 
-const templateName = 'CAR SPAJ CLEAN.pdf';
+const templateName = 'CAR SPAJ.pdf';
 
     const sampleData = {
         // === Data dasar dari base ===
